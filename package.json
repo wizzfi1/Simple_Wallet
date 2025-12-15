@@ -31,5 +31,13 @@
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.9.3"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wizzfi1/Simple_Wallet.git"
+  },
+  "bugs": {
+    "url": "https://github.com/wizzfi1/Simple_Wallet/issues"
+  },
+  "homepage": "https://github.com/wizzfi1/Simple_Wallet#readme",
   "license": "ISC"
 }
