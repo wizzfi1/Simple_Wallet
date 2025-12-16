@@ -228,8 +228,6 @@ Funding and transfer endpoints support idempotency via the Idempotency-Key reque
 
 -Authentication and authorization are out of scope
 
--Concurrency handling is simplified due to in-memory storage
-
 
 ## Scaling & Production Considerations
 
