@@ -1,0 +1,110 @@
+{
+  "info": {
+    "name": "Simple Wallet Service (NestJS)",
+    "description": "Postman collection for testing the Simple Wallet service running in GitHub Codespaces",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://supreme-goggles-g4rrjxqqgj4vfw77q-3000.app.github.dev",
+      "type": "string"
+    },
+    {
+      "key": "walletId",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "fromWalletId",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "toWalletId",
+      "value": "",
+      "type": "string"
+    }
+  ],
+
+  "item": [
+    {
+      "name": "Create Wallet",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/wallets",
+          "host": ["{{baseUrl}}"],
+          "path": ["wallets"]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"currency\": \"USD\"\n}"
+        }
+      }
+    },
+
+    {
+      "name": "Fund Wallet",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/wallets/{{walletId}}/fund",
+          "host": ["{{baseUrl}}"],
+          "path": ["wallets", "{{walletId}}", "fund"]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"amount\": 100\n}"
+        }
+      }
+    },
+
+    {
+      "name": "Transfer Funds",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/wallets/transfer",
+          "host": ["{{baseUrl}}"],
+          "path": ["wallets", "transfer"]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"fromWalletId\": \"{{fromWalletId}}\",\n  \"toWalletId\": \"{{toWalletId}}\",\n  \"amount\": 50\n}"
+        }
+      }
+    },
+
+    {
+      "name": "Get Wallet Details",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/wallets/{{walletId}}",
+          "host": ["{{baseUrl}}"],
+          "path": ["wallets", "{{walletId}}"]
+        }
+      }
+    }
+  ]
+}

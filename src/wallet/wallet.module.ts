@@ -1,14 +1,10 @@
 import { Module } from '@nestjs/common';
-import { WalletController } from './wallet.controller';
 import { WalletService } from './wallet.service';
+import { WalletController } from './wallet.controller';
 
-/**
- * WalletModule groups everything related to wallets:
- * - Controller (API layer)
- * - Service (business logic)
- */
 @Module({
   controllers: [WalletController],
   providers: [WalletService],
+  exports: [WalletService],
 })
 export class WalletModule {}
